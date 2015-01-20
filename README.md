@@ -1,7 +1,15 @@
-btodo
-=====
+xtodo
+====
 
 todo list
+======
+
+run
+======
+python xtodo.py
+
+sql
+======
 sql: CREATE TABLE todo (id INTEGER PRIMARY KEY, task char(100) NOT NULL, status bool NOT NULL)
 
 import sqlite3
