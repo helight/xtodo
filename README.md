@@ -10,14 +10,15 @@ python xtodo.py
 
 sql
 ======
-sql: CREATE TABLE todo (id INTEGER PRIMARY KEY, task char(100) NOT NULL, status bool NOT NULL)
 
 import sqlite3
+csql = "CREATE TABLE xtodo (id INTEGER PRIMARY KEY, task char(100) NOT NULL, status int NOT NULL, time TIMESTAMP NULL  DEFAULT CURRENT_TIMESTAMP)"
 con = sqlite3.connect('todo.db') # Warning: This file is created in the current directory
-con.execute("CREATE TABLE todo (id INTEGER PRIMARY KEY, task char(100) NOT NULL, status bool NOT NULL)")
-con.execute("INSERT INTO todo (task,status) VALUES ('Read A-byte-of-python to get a good introduction into Python',0)")
-con.execute("INSERT INTO todo (task,status) VALUES ('Test various editors for and check the syntax highlighting',1)")
-con.execute("INSERT INTO todo (task,status) VALUES ('Choose your favorite WSGI-Framework',0)")
+con.execute("drop table if exists xtodo")
+con.execute(csql)
+con.execute("INSERT INTO xtodo (task,status) VALUES ('testtesttest111111111111',0)")
+con.execute("INSERT INTO xtodo (task,status) VALUES ('eeeeeeeeeeeeeeeeeeeeeeeeee',1)")
+con.execute("INSERT INTO xtodo (task,status) VALUES ('888888888888888888888888888888',0)")
 con.commit()
-CREATE TABLE `todo` (`id` INT(10) NULL AUTO_INCREMENT, `task` CHAR(255) NULL DEFAULT '0', `status` INT NULL DEFAULT '0',`time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`))
+
 
